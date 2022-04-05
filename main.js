@@ -29,7 +29,7 @@ let puntuacionFinal = document.getElementById('puntuacionFinal');
 
 // Declarar funciones
 // Ordenadas siguiendo el orden en el que aparecen
-function inicio(){
+function inicio() {
     numeroPregunta = 0;
     numeroPuntos = 0;
     puntos.innerHTML = numeroPuntos;
@@ -39,14 +39,14 @@ function inicio(){
     montarPregunta(numeroPregunta);
 };
 
-function desordenar(array){
-    array = array.sort(function(){return Math.random() - 0.5;});
+function desordenar(array) {
+    array = array.sort(function () { return Math.random() - 0.5; });
     return array;
 };
 ordenPreguntas = desordenar(ordenPreguntas);
 ordenRespuestas = desordenar(ordenRespuestas);
 
-function montarPregunta(numeroPregunta){
+function montarPregunta(numeroPregunta) {
     document.getElementById('titulo').style.display = 'block';
     document.getElementById('enunciado').style.display = 'block';
     document.getElementById('grupoRespuestas').style.display = 'block';
@@ -56,18 +56,18 @@ function montarPregunta(numeroPregunta){
     preguntaActual = ordenPreguntas[numeroPregunta];
     enunciado.innerHTML = listaPreguntas[preguntaActual][0];
     mostrarNumeroPregunta.innerHTML = 'Pregunta ' + (numeroPregunta + 1);
-    for (var i = 0; i<=3; i++){
+    for (var i = 0; i <= 3; i++) {
         respuesta = listaPreguntas[ordenPreguntas[numeroPregunta]][ordenRespuestas[i]];
         window['botonRespuesta' + (i + 1)].innerHTML = respuesta;
     }
-    for (var i = 0; i<=4; i++){
+    for (var i = 0; i <= 4; i++) {
         document.getElementById('imagen' + i).src = '';
     }
     document.getElementById('imagen' + [ordenPreguntas[numeroPregunta]]).src = 'https://img.icons8.com/color/48/000000/' + listaPreguntas[ordenPreguntas[numeroPregunta]][5] + '-circular.png';
 };
 
-function comprobarRespuesta(respuesta){
-    if (respuesta == listaPreguntas[ordenPreguntas[numeroPregunta]][6]){
+function comprobarRespuesta(respuesta) {
+    if (respuesta == listaPreguntas[ordenPreguntas[numeroPregunta]][6]) {
         sonidoAcierto.play();
         document.getElementById('titulo').style.display = 'none';
         document.getElementById('enunciado').style.display = 'none';
@@ -80,20 +80,20 @@ function comprobarRespuesta(respuesta){
         numeroPuntos += 10;
         numeroPregunta += 1;
     }
-    else{
+    else {
         sonidoFallo.play();
         numeroPuntos -= 5;
     };
     puntos.innerHTML = numeroPuntos;
 };
 
-function siguientePregunta(){
+function siguientePregunta() {
     //Comprobar si quedan más preguntas
-    if (numeroPregunta < listaPreguntas.length){
+    if (numeroPregunta < listaPreguntas.length) {
         document.getElementById('acierto').style.display = 'none'
         montarPregunta(numeroPregunta);
     }
-    else{
+    else {
         document.getElementById('siguientePregunta').style.display = 'none';
         document.getElementById('acierto').style.display = 'none'
         document.getElementById('terminar').style.display = 'block';
@@ -101,7 +101,7 @@ function siguientePregunta(){
     }
 };
 
-function mostrarPuntos(){
+function mostrarPuntos() {
     puntuacionFinal.innerHTML = 'Tu puntuación ha sido de ' + localStorage.getItem('puntuacionFinal') + ' puntos';
 };
 

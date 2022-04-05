@@ -39,46 +39,47 @@ body{
     margin: 0;
 }
 
-.iDivBoton{
-    margin-top: 20em;
+.iElegirContinente{
+    background: rgba(122, 107, 59, 0.9);
+    border-radius: 10px;
+    font-size: 2em;
+    height: 5vw;    
+    margin: 2em;
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
 .iEnlaceBoton{
-    background: rgba(122, 107, 59, 0.9);
-    border-radius: 10%;
-    border-top-left-radius: 40%;
-    border-bottom-right-radius: 40%;
     text-decoration: none;
-    cursor: pointer;
-    width: 50vw;
-    height: 8vw;
-    margin: 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
 .iBoton{
-    background: rgba(0, 0, 0, 0);
-    border: none;
-    width: 50vw;
-    height: 8vw;
+    background: rgba(122, 107, 59, 0.9);
+    border-style: none;
+    border-radius: 10%;
+    border-top-left-radius: 40%;
+    border-bottom-right-radius: 40%;
     font-size: 3em;
+    cursor: pointer;
+    width: 35vw;
+    height: 8vw;
+    margin: 3vw;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.iDivBoton:hover{
-    margin-top: 19em;
-}
-
-.iEnlaceBoton:hover{
+.iBoton:hover{
     background: rgb(122, 107, 59);
-    width: 55vw;
-    height: 10vw;
+    border-left: 4em solid rgb(122, 107, 59) outset;
+    border-right: 4em solid rgb(122, 107, 59) outset;
+    font-size: 3.5em;
 }
 
 

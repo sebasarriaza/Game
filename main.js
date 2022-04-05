@@ -1,5 +1,8 @@
 //Mejoras:
-// Guardar puntuación máxima (con localstorage) y mostrarla en la pantalla de inicio
+// No mostrar siguiente pregunta cuando ya no quedan más preguntas
+// Añadir video de confeti al terminar la partida
+// No mostrar puntuación negatica (se puede usar un if para comprobar si la puntuación es menor que cero)
+// Formulario para añadir preguntas (se puede hacer con push al array y local storage para introducir los datos)
 
 // Declarar variables
 let numeroPuntos;
@@ -9,6 +12,7 @@ let enunciado = document.getElementById('enunciado');
 let respuesta = document.getElementById('botonRespuesta');
 let puntos = document.getElementById('puntos');
 let puntuacionFinal = document.getElementById('puntuacionFinal');
+let puntuacionMaxima = document.getElementById('puntuacionMaxima');
 let sonidoAcierto = new Audio('./sounds/acierto.mp3');
 let sonidoFallo = new Audio('./sounds/fallo.mp3');
 let datos = {
@@ -53,7 +57,6 @@ function inicio() {
     puntos.innerHTML = numeroPuntos;
     continente = localStorage.getItem('continente');
     document.getElementById('acierto').style.display = 'none';
-    document.getElementById('siguientePregunta').style.display = 'none';
     document.getElementById('terminar').style.display = 'none';
     datos[continente].sort(function () { return Math.random() - 0.5; });
     for (let i = 0; i < datos[continente].length; i++) {
@@ -111,9 +114,19 @@ function siguientePregunta() {
         document.getElementById('acierto').style.display = 'none'
         document.getElementById('terminar').style.display = 'block';
         localStorage.setItem('puntuacionFinal', numeroPuntos);
-    }
+        if (localStorage.getItem('puntuacionFinal') > localStorage.getItem('puntuacionMaxima')) {
+            localStorage.setItem('puntuacionMaxima', localStorage.getItem('puntuacionFinal'));
+        };
+    };
 };
 
-function mostrarPuntos() {
+function mostrarPuntuacionFinal() {
     puntuacionFinal.innerHTML = 'Tu puntuación ha sido de ' + localStorage.getItem('puntuacionFinal') + ' puntos';
 };
+
+function mostrarPuntuacionMaxima() {
+    if (localStorage.getItem('puntuacionMaxima') == null) {
+        document.getElementById('puntuacionMaxima').style.display = 'none';
+    }
+    puntuacionMaxima.innerHTML = 'Tu récord es de ' + localStorage.getItem('puntuacionMaxima') + ' puntos';
+}

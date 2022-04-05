@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+body{
+    font-family: 'Dela Gothic One';
+    margin: 0;
+}
+
+.Layer{
+    position: absolute;
+    background-color: rgba(122, 107, 59, 0.9);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+/* index.html */
+
+.iBody{
+    background-image: url(./images/background.png);
+    background-size: cover;
+}
+
+.iHeader{
+    background: rgba(122, 107, 59, 0.9);
+    width: 100%;
+    display: flex;
+}
+
+.iImagen{
+    width: 10em;
+}
+
+.iTitulo{
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.iDivBoton{
+    margin-top: 20em;
+    display: flex;
+    justify-content: center;
+}
+
+.iEnlaceBoton{
+    background: rgba(122, 107, 59, 0.9);
+    border-radius: 10%;
+    border-top-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    text-decoration: none;
+    cursor: pointer;
+    width: 50vw;
+    height: 8vw;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iBoton{
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    width: 50vw;
+    height: 8vw;
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iDivBoton:hover{
+    margin-top: 19em;
+}
+
+.iEnlaceBoton:hover{
+    background: rgb(122, 107, 59);
+    width: 55vw;
+    height: 10vw;
+}
+
+
+/* pantalla principal */
+
+.pBody{
+    background: url(./images/background.png);
+    background-size: cover;
+    /* box-shadow: inset 0 0 0 100% rgba(122, 107, 59, 0.9); */
+    padding: 3em;
+}
+
+.pHeader{
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.pTitulo{
+    margin: 0;
+}
+
+.pCentral{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pDivEnunciado{
+    font-size: 4em;
+    margin-bottom: .6em;
+    display: flex;
+}
+
+.pEnunciado{
+    margin: 0;
+}
+
+.pImagenes{
+    display: flex;
+    align-items: center;
+    margin: .5em;
+}
+
+.pGrupoRespuestas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pRespuestas{
+    padding: 1em;
+}
+
+.pRespuestasBoton{
+    border-style: none;
+    border-radius: 10%;
+    border-top-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    background-color: rgba(24, 20, 9, 0.9);
+    cursor: pointer;
+    font-size: 1.5em;
+    width: 25vw;
+    min-height: 1.5em;
+    height: 3vw;
+}
+
+.pRespuestasBoton:hover{
+    background-color: rgb(17, 15, 6);
+}
+
+.pRespuestasBoton:focus{
+    transition-delay: .2s;
+    background-color: red;
+}
+
+.pSistemaPuntos{
+    font-size: 2em;
+    display: flex;
+}
+
+.pPuntuacion{
+    margin-right: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.pMostrarNumeroPregunta{
+    margin: .5em;
+}
+
+.pAcierto{
+    width: 10em;
+}
+
+.pSiguientePregunta{
+    border-style: none;
+    border-radius: 10px;
+    background-color: rgba(24, 20, 9, 0.9);
+    cursor: pointer;
+    font-size: 1.5em;
+    width: 20vw;
+    height: 5vw;
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 37%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.pTerminarBoton{
+    border-style: none;
+    border-radius: 10px;
+    background-color: rgba(24, 20, 9, 0.9);
+    cursor: pointer;
+    font-size: 1.5em;
+    width: 20vw;
+    height: 5vw;
+    position: absolute;
+    margin-top: 10%;
+    margin-left: 37%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;}
+
+
+/* pantalla final */
+.fBody{
+    background: url(./images/background.png);
+    background-size: cover;
+}
+
+.fHeader{
+    text-align: center;
+    font-size: 1.5em;
+    margin: 1em;
+}
+
+.fMensaje{
+    font-size: 2em;
+    margin: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+.fBotones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .fEnlaceBoton{
+    margin: 1em;
+} */
+
+.fBoton{
+    background-color: rgba(24, 20, 9, 0.9);
+    border-radius: 10px;
+    border-style: none;
+    font-size: 1.5em;
+    margin: 2em;
+    width: 20vw;
+    height: 5vw;
+}
+
+.fBoton:hover{
+    background-color: rgb(10, 9, 4);
+}

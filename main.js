@@ -126,7 +126,7 @@ function mostrarPuntuacionFinal() {
 
 function mostrarPuntuacionMaxima() {
     if (localStorage.getItem('puntuacionMaxima') == null) {
-        document.getElementById('puntuacionMaxima').style.display = 'none';
+        localStorage.setItem('puntuacionMaxima', 0);
     }
     puntuacionMaxima.innerHTML = 'Tu récord es de ' + localStorage.getItem('puntuacionMaxima') + ' puntos';
 }

@@ -4,22 +4,45 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Teoría y Test</title>
+  <title>Adivina la capital</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="./images/icon.png">
 </head>
 
-<body class="iBody">
+<body class="iBody" onload="mostrarPuntuacionMaxima()">
 
   <header class="iHeader">
     <img class="iImagen" src="./images/icon.png">
     <h1 class="iTitulo">Adivina la capital</h1>
   </header>
 
+  <div class="iDivPuntuacionMaxima">
+    <p id="puntuacionMaxima" class="iPuntuacionMaxima"></p>
+  </div>
+
+  <div>
+    <h3 class="iElegirContinente">Elige un continente</h3>
+  </div>
+
   <div id="empezarTestDiv" class="iDivBoton">
     <a class="iEnlaceBoton" href="pantalla_principal.html">
-      <button class="iBoton">
-        Jugar
+      <button class="iBoton" onclick="localStorage.setItem('continente', 'europa')">
+        Europa
+      </button>
+    </a>
+    <a class="iEnlaceBoton" href="pantalla_principal.html">
+      <button class="iBoton" onclick="localStorage.setItem('continente', 'america')">
+        América
+      </button>
+    </a>
+    <a class="iEnlaceBoton" href="pantalla_principal.html">
+      <button class="iBoton" onclick="localStorage.setItem('continente', 'asia')">
+        Asia
+      </button>
+    </a>
+    <a class="iEnlaceBoton" href="pantalla_principal.html">
+      <button class="iBoton" onclick="localStorage.setItem('continente', 'oceania')">
+        Oceanía
       </button>
     </a>
   </div>
